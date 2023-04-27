@@ -10,6 +10,7 @@ function App() {
 	const [isCowVisible, setIsCowVisible] = useState(false);
 	const [score, setScore] = useState(0);
 	const [remainingTime, setRemainingTime] = useState(15); // 15 seconds
+	const [showLickedMessage, setShowLickedMessage] = useState(false); //added to fix the bug of 'score licked away' message showing prematurely
 
 	//trigger countdown
 	useEffect(() => {
@@ -67,6 +68,7 @@ function App() {
 		setNumberRolled(null);
 		setScore(0);
 		setRemainingTime(15);
+		setShowLickedMessage(false);
 	}
 
 	function rollTheDice() {
@@ -75,7 +77,11 @@ function App() {
 	}
 
 	function showCow() {
+		setShowLickedMessage(false);
 		setIsCowVisible(true);
+		setTimeout(() => {
+			setShowLickedMessage(true);
+		}, 1000);
 	}
 	function hideCow() {
 		setIsCowVisible(false);
@@ -89,7 +95,10 @@ function App() {
 					<h1>
 						{isGameOver && isGameWon
 							? "Hooray, you won 🥳"
-							: isGameOver && !isGameWon && remainingTime > 0
+							: isGameOver &&
+							  !isGameWon &&
+							  remainingTime > 0 &&
+							  showLickedMessage
 							? "Uh-oh, cow licked your score away 😭"
 							: isGameOver && !isGameWon && remainingTime === 0
 							? "Oh, no, your time is up ☹️"
