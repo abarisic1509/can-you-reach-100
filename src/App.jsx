@@ -11,18 +11,6 @@ function App() {
 	const [score, setScore] = useState(0);
 	const [remainingTime, setRemainingTime] = useState(15); // 15 seconds
 
-	//set timeout for showing cow when game is started and trigger countdown
-	// useEffect(() => {
-	// 	//random time will generate time between 1-5 seconds
-	// 	const randomTime = Math.floor(Math.random() * (5000 - 4000 + 1)) + 1000;
-	// 	if (isGameStarted && score > 10 && remainingTime > 0 && !isGameOver) {
-	// 		const timeout = setTimeout(() => {
-	// 			showCow();
-	// 		}, randomTime);
-	// 		return () => clearTimeout(timeout);
-	// 	}
-	// }, [isGameStarted, remainingTime, score]);
-
 	//trigger countdown
 	useEffect(() => {
 		if (isGameStarted && remainingTime > 0 && !isGameOver) {
@@ -36,7 +24,7 @@ function App() {
 		}
 	}, [isGameStarted, remainingTime, isGameOver]);
 
-	//check teh score and remaining time every time each change and set game over accordingly
+	//check the score and remaining time every time each change and set game over accordingly
 	useEffect(() => {
 		if (score >= 100) {
 			setIsGameOver(true);
@@ -100,7 +88,7 @@ function App() {
 				<header className="game-header">
 					<h1>
 						{isGameOver && isGameWon
-							? "Congratulations, you won 🥳"
+							? "Hooray, you won 🥳"
 							: isGameOver && !isGameWon && remainingTime > 0
 							? "Uh-oh, cow licked your score away 😭"
 							: isGameOver && !isGameWon && remainingTime === 0

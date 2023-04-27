@@ -32,7 +32,8 @@ body {
 }
 
 h1 {
-	font-size: 3.2em;
+	font-size: 2em;
+	font-size: clamp(2rem, 0.8rem + 3.84vw, 3.2rem);
 	line-height: 1.1;
 	margin-bottom: 0.5em;
 }
@@ -73,6 +74,11 @@ button {
 	border-radius: 1rem;
 	box-shadow: 2px 6px 28px 3px rgba($color: $clr-primary-50, $alpha: 0.5);
 	position: relative;
+	height: calc(100svh - 10rem);
+	height: calc(100svh - 10rem);
+	display: grid;
+	align-items: center;
+	max-height: 900px;
 	overflow: hidden;
 }
 
@@ -119,6 +125,12 @@ button {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+	}
+}
+
+@media (min-width: 1001px) {
+	h1 {
+		font-size: 3.2rem;
 	}
 }
 
