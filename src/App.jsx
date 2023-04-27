@@ -98,8 +98,10 @@ function App() {
 				</header>
 				<main className="game-content">
 					<div className="game-score">
-						<h2>Score: {score}</h2>
-						{isGameStarted && <p>Time remaining: {remainingTime} s</p>}
+						<h2>
+							<span>Score: {score}</span>
+							{isGameStarted && <span>Time: {remainingTime} s</span>}
+						</h2>
 					</div>
 					<div className="game-dices">
 						{isGameStarted && <small>Click the dice to roll the number</small>}

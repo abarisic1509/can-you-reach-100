@@ -22,12 +22,17 @@ $clr-secondary-50: #4d194d;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-text-size-adjust: 100%;
 }
-
+* {
+	box-sizing: border-box;
+}
 body {
 	margin: 0;
 	display: flex;
 	place-items: center;
 	min-width: 320px;
+	width: 100svw;
+	width: 100vw;
+	min-height: 100svh;
 	min-height: 100vh;
 }
 
@@ -36,6 +41,13 @@ h1 {
 	font-size: clamp(2rem, 0.8rem + 3.84vw, 3.2rem);
 	line-height: 1.1;
 	margin-bottom: 0.5em;
+}
+h2 {
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+	max-width: 32rem;
+	margin-inline: auto;
 }
 
 button {
@@ -62,14 +74,17 @@ button {
 }
 
 #root {
-	max-width: 1280px;
+	width: 100%;
+	max-width: 1000px;
 	margin: 0 auto;
-	padding: 2rem;
+	padding: 1rem;
+	padding: clamp(1rem, -2rem + 8vw, 2rem);
 	text-align: center;
 }
 
 .App {
-	padding: 2rem;
+	padding: 1rem;
+	padding: clamp(1rem, -2rem + 8vw, 2rem);
 	background-color: $clr-primary-10;
 	border-radius: 1rem;
 	box-shadow: 2px 6px 28px 3px rgba($color: $clr-primary-50, $alpha: 0.5);
@@ -81,7 +96,11 @@ button {
 	max-height: 900px;
 	overflow: hidden;
 }
-
+.game-wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
 .game-dices {
 	display: flex;
 	flex-direction: column;
@@ -128,6 +147,12 @@ button {
 	}
 }
 
+@media (min-width: 801px) {
+	#root,
+	.App {
+		padding: 2rem;
+	}
+}
 @media (min-width: 1001px) {
 	h1 {
 		font-size: 3.2rem;
