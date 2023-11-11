@@ -9,6 +9,10 @@ $clr-secondary-30: #312244;
 $clr-secondary-40: #3e1f47;
 $clr-secondary-50: #4d194d;
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
 	font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
 
@@ -27,30 +31,21 @@ $clr-secondary-50: #4d194d;
 }
 body {
 	margin: 0;
-	display: flex;
-	place-items: center;
-	min-width: 320px;
+	display: grid;
+	align-items: center;
 	width: 100svw;
 	width: 100vw;
 	min-height: 100svh;
 	min-height: 100vh;
+	padding: 1.5rem;
 }
-
-h1 {
+.h1 {
 	font-size: 2em;
 	font-size: clamp(2rem, 0.8rem + 3.84vw, 3.2rem);
 	line-height: 1.1;
 	margin-bottom: 0.5em;
 }
-h2 {
-	display: flex;
-	justify-content: space-between;
-	gap: 1rem;
-	max-width: 32rem;
-	margin-inline: auto;
-}
-
-button {
+.btn {
 	border-radius: 8px;
 	border: 3px solid transparent;
 	padding: 0.6em 1.2em;
@@ -73,42 +68,13 @@ button {
 	}
 }
 
-#root {
-	width: 100%;
-	max-width: 1000px;
-	margin: 0 auto;
-	padding: 1rem;
-	padding: clamp(1rem, -2rem + 8vw, 2rem);
-	text-align: center;
+.cow {
+	font-size: 2em;
+	font-size: clamp(2rem, 0.8rem + 3.84vw, 3.2rem);
+	line-height: 1.1;
+	margin-bottom: 0.5em;
 }
 
-.App {
-	padding: 1rem;
-	padding: clamp(1rem, -2rem + 8vw, 2rem);
-	background-color: $clr-primary-10;
-	border-radius: 1rem;
-	box-shadow: 2px 6px 28px 3px rgba($color: $clr-primary-50, $alpha: 0.5);
-	position: relative;
-	height: calc(100svh - 10rem);
-	height: calc(100svh - 10rem);
-	display: grid;
-	align-items: center;
-	max-height: 900px;
-	overflow: hidden;
-}
-.game-wrapper {
-	display: flex;
-	flex-direction: column;
-	gap: 1.5rem;
-}
-.game-dices {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	gap: 0.5rem;
-	margin-block: 1rem;
-}
 .dice {
 	display: block;
 	border-radius: 10px;
@@ -144,30 +110,5 @@ button {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-	}
-}
-
-@media (min-width: 801px) {
-	#root,
-	.App {
-		padding: 2rem;
-	}
-}
-@media (min-width: 1001px) {
-	h1 {
-		font-size: 3.2rem;
-	}
-}
-
-@media (prefers-color-scheme: light) {
-	:root {
-		color: #213547;
-		background-color: #ffffff;
-	}
-	a:hover {
-		color: #747bff;
-	}
-	button {
-		background-color: #f9f9f9;
 	}
 }
