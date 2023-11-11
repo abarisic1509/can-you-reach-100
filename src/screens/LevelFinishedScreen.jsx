@@ -8,7 +8,7 @@ const LevelFinishedScreen = ({
 	handleNextLevel,
 }) => {
 	return (
-		<main className=" bg-primary-10 rounded-2xl relative py-20 px-10 md:px-20 w-full max-w-3xl mx-auto flex flex-col items-center">
+		<main className=" bg-primary-10 rounded-2xl relative py-20 px-10 md:px-20 w-full max-w-3xl mx-auto min-h-[50vh] flex flex-col justify-center items-center">
 			<h1 className=" text-3xl font-bold text-center">Level finished 🥳</h1>
 			<div className="flex flex-wrap-reverse gap-10 justify-between"></div>
 			<div className="flex flex-col justify-center items-center gap-2 my-6">

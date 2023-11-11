@@ -144,7 +144,7 @@ const GameActiveScreen = ({
 	}
 
 	return (
-		<main className=" bg-primary-10 rounded-2xl relative py-20 px-10 md:px-20 w-full max-w-3xl mx-auto">
+		<main className=" bg-primary-10 rounded-2xl relative py-20 px-10 md:px-20 w-full max-w-3xl mx-auto min-h-[50vh] flex flex-col justify-center items-center">
 			<div className="flex flex-wrap-reverse gap-10 justify-between">
 				<p className=" text-xl flex flex-col gap-3">
 					<span>Score: {score}</span>
